@@ -45,11 +45,16 @@ const productSchema =  mongoose.Schema(
                 },
                 reviewer: {
                     type: mongoose.Schema.Types.ObjectId,
-                    ref: "CUSTOMERS",
+                    // here model customer is case sensitive so use same name as describe
+                    // ref: "CUSTOMERS",
+                    ref:"customer"
                 },
                 date: {
                     type: Date,
-                    default: Text,
+                    // Here instead of Text it should be Date.now as default value
+                    // default:Text
+                    default: Date.now
+                   
                 },
             },
         ],
@@ -59,4 +64,6 @@ const productSchema =  mongoose.Schema(
         },
     }, { timestamps: false});
 
-module.exports = mongoose.mongoose("product", productSchema)
+//The mongoose.model function is used to create a model based on a specified schema. The mongoose.mongoose function does not exist,hence the first statement is incorrect.
+// module.exports = mongoose.mongoose("product", productSchema)
+module.exports = mongoose.model("product", productSchema)

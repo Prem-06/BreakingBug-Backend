@@ -2,6 +2,8 @@
 
 <img src="https://images.prismic.io/ieeemuj/Zqu58B5LeNNTxuyE_BreakingBugBanner.png?auto=format,compress" alt="Breaking Bug Poster">
 
+Here is a [Google Sheet](https://docs.google.com/spreadsheets/d/1pJPSbWg_cZDWwcE3Xcr_0npyTVZE7zj3UZb0niE-T-A/edit?gid=0#gid=0) contains all the error I found.
+
 ## Table of Content
 - [Introduction](#introduction)
 - [Pre-requisites](#pre-requisites)

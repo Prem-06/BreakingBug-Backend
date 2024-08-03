@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
+const customerSchema = require("./customerSchema");
 
 const orderSchema = new mongoose.Schema(
     {
         buyer: {
-            type: mongoose.Schema.ObjectId,
+            // here .Types is missing
+            // type: mongoose.Schema.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "customer",
             required: true,
         },
@@ -116,5 +119,6 @@ const orderSchema = new mongoose.Schema(
             default: Date.now,
         },
     });
-
-module.exports = mongoose.model("customer", orderSchema);
+//  here both orderSchema and customerSchema has same model name so it create a bug 
+// module.exports = mongoose.model("customer", orderSchema);
+module.exports = mongoose.model("order", orderSchema);

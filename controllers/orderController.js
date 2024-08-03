@@ -68,10 +68,10 @@ const getOrderedProductsBySeller = async (req, res) => {
                 order.orderedProducts.forEach(product => {
                     const existingProductIndex = accumulator.findIndex(p => p._id.toString() === product._id.toString());
                     if (existingProductIndex !== -1) {
-                        // If product already exists, merge quantities
+                        
                         accumulator[existingProductIndex].quantity += product.quantity;
                     } else {
-                        // If product doesn't exist, add it to accumulator
+                       
                         accumulator.push(product);
                     }
                 });

@@ -1,10 +1,15 @@
 const router = require('express').Router();
 const authMiddleware = require('../middleware/authMiddleware.js');
 
+// here we are importing function from wrong file 
+// const {
+//     sellerRegister,
+//     sellerLogIn
+// } = require('../controllers/orderController.js');
 const {
     sellerRegister,
     sellerLogIn
-} = require('../controllers/orderController.js');
+} = require('../controllers/sellerController.js');
 
 const {
     productCreate,
@@ -69,3 +74,6 @@ router.put('/CustomerUpdate/:id', cartUpdate);
 router.post('/newOrder', newOrder);
 router.get('/getOrderedProductsByCustomer/:id', getOrderedProductsBySeller);
 router.get('/getOrderedProductsBySeller/:id', getOrderedProductsBySeller);
+
+// not exported the router 
+module.exports=router

@@ -54,7 +54,9 @@ const customerSchema = mongoose.Schema({
         },
         seller: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'SELLER'
+            // here model name is not correct
+            // ref: 'SELLER'
+            ref: 'seller'
         },
     }],
     shippingData: {
